@@ -23,6 +23,20 @@ require "sequel"
 
 			puts "Made a database"
 
+		# else
+
+		# 	print "Would you like to delete the database (y/n)? "
+		# 	input = gets.chomp
+
+		# 	if input == 'y'
+		# 		File.new("database.db", "w+")
+		# 	elsif input == 'n'
+				
+		# 	else
+		# 		puts "Not a valid option"
+		# 	end
+				
+
 		end
 
 # 	end
