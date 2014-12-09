@@ -27,22 +27,16 @@ class CreditCardProcessing
 	end
 
 	def balance()
-
-		puts "#{@name} $#{@balance}"
 		@balance
 		
 	end
 
 	def limit()
-
-		puts "#{@name} $#{@limit}"
 		@limit
 		
 	end
 
 	def valid()
-
-		puts "#{@name} $#{@luhn_check}"
 		@luhn_check
 		
 	end
@@ -56,7 +50,7 @@ class CreditCardProcessing
 		else
 			@balance += amount
 			puts "#{@name}'s charged $#{amount}, balance is now $#{@balance}"
-			@balance
+			balance()
 		end
 
 	end
@@ -68,7 +62,7 @@ class CreditCardProcessing
 		else
 			@balance -= amount
 			puts "#{@name}'s credited $#{amount}, balance is now $#{@balance}"
-			@balance
+			balance()
 		end
 
 	end
