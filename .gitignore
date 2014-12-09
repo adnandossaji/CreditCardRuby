@@ -35,3 +35,5 @@ build/
 !.db_tester.rb
 .test.db
 !.database.db
+*.db
+db_tester.rb
