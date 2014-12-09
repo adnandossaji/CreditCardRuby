@@ -1,0 +1,39 @@
+sudo ruby ./run_program.rb < file.txt
+
+Add Tom 4111111111111111 $1000
+Add Lisa 5454545454545454 $3000
+Add Quincy 1234567890123456 $2000
+Charge Tom $500
+Charge Tom $800
+Charge Lisa $7
+Credit Lisa $100
+Credit Quincy $200
+to run STDIN
+
+tests for STDIN
+
+echo "Add Tom 4111111111111111 $1000" | ruby run_program.rb
+echo "Add Lisa 5454545454545454 $3000" | ruby run_program.rb
+echo "Add Quincy 1234567890123456 $2000" | ruby run_program.rb
+echo "Charge Tom $500" | ruby run_program.rb
+echo "Charge Tom $800" | ruby run_program.rb
+echo "Charge Lisa $7" | ruby run_program.rb
+echo "Credit Lisa $100" | ruby run_program.rb
+echo "Credit Quincy $200" | ruby run_program.rb
+
+tests for sqlite
+
+echo "Add Tom 4111111111111111 $1000" | ruby run_program.rb
+
+echo "Charge Tom $500" | ruby run_program.rb
+
+
+
+tom = CreditCardProcessing.new("Tom", "4111111111111111", 1000)
+lisa = CreditCardProcessing.new("Lisa", "5454545454545454", 3000)
+quincy = CreditCardProcessing.new("Quincy", "1234567890123456", 2000)
+tom.charge(500)
+tom.charge(800)
+lisa.charge(7)
+lisa.credit(100)
+quincy.credit(200)
