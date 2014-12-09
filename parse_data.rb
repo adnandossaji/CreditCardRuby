@@ -17,6 +17,8 @@ def parse_data(new_data, data_storage)
 			name, cc, limit = line[1..-1]
 			limit = limit[1..-1].to_i
 			data_storage[name] = CreditCardProcessing.new(name, cc, limit)
+			validity = @data_storage[name].valid().to_s
+			@accounts.insert(:name => name, :card_validity => validity, :limit => limit, :balance => 0)
 
 		when 'Charge'
 
