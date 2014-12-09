@@ -1,4 +1,4 @@
-sudo ruby ./run_program.rb < file.txt
+sudo ruby ./run_program.rb < docs/file.txt
 
 Add Tom 4111111111111111 $1000
 Add Lisa 5454545454545454 $3000
