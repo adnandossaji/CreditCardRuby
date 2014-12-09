@@ -1,2 +1,3 @@
+database.yaml
 *.db
 db_tester.rb
