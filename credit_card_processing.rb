@@ -56,7 +56,7 @@ class CreditCardProcessing
 			puts "#{@name}'s charged $#{amount}, balance is now $#{@balance}"
 		end
 
-		balance()
+		return balance()
 
 	end
 
@@ -69,7 +69,7 @@ class CreditCardProcessing
 			puts "#{@name}'s credited $#{amount}, balance is now $#{@balance}"
 		end
 
-		balance()
+		return balance()
 
 	end
 
@@ -90,7 +90,7 @@ class CreditCardProcessing
 			puts "#{name}'s credit card number was invalid"
 		end
 
-		check
+		return check
 
 	end
 
