@@ -1,23 +1,30 @@
 require "sequel"
 
-if File.file?("database.db") == false
+# class DatabaseManager
 
-	File.new("database.db", "w+")
+# 	def createDB()
 
-	DB = Sequel.sqlite('database.db')
+		if File.file?("database.db") == false
 
-	DB.create_table :items do
-		primary_key :id
-		String :name
-		String :credit_card
-		Boolean :card_validity
-		Integer :limit
-		Integer :balance
-	end
+			File.new("database.db", "w+")
 
-	@items = DB[:items]
+			DB = Sequel.sqlite('database.db')
 
-	puts "Made a database"
+			DB.create_table :accounts do
+				primary_key :id
+				string :name
+				string :credit_card
+				string :card_validity
+				integer :limit
+				integer :balance
+			end
 
-end
+			@accounts = DB[:accounts]
+
+			puts "Made a database"
+
+		end
+
+# 	end
 	
+# end
