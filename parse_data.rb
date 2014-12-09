@@ -16,8 +16,10 @@ def parse_data(new_data, data_storage)
 
 			name, cc, limit = line[1..-1]
 			limit = limit[1..-1].to_i
+
 			data_storage[name] = CreditCardProcessing.new(name, cc, limit)
 			validity = @data_storage[name].valid().to_s
+
 			@accounts.insert(:name => name, :card_validity => validity, :limit => limit, :balance => 0)
 
 		when 'Charge'
@@ -28,7 +30,9 @@ def parse_data(new_data, data_storage)
 			if data_storage[name].nil?
 				puts "Could not find #{name}"
 			else
-				data_storage[name].charge(amount)
+				new_balance = @data_storage[name].charge(amount)
+
+				@accounts.where(:name => name).update(:balance => new_balance)
 			end
 
 		when 'Credit'
@@ -39,7 +43,9 @@ def parse_data(new_data, data_storage)
 			if data_storage[name].nil?
 				puts "Could not find #{name}"
 			else
-				data_storage[name].credit(amount)
+				new_balance = @data_storage[name].credit(amount)
+
+				@accounts.where(:name => name).update(:balance => new_balance)
 			end
 
 		end
